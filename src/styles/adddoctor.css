@@ -187,6 +187,27 @@
   font-family: serif;
   font-weight: 500;
 }
+.chimpu {
+  font-size: 19px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-family: serif;
+  font-weight: 500;
+}
+.chinpu {
+  color: #515151;
+  padding-left: 35px;
+}
+.chibpu {
+  background-color: #f8f9fd;
+  border-width: 0px;
+  margin-left: auto;
+}
+.mangal {
+  padding-left: auto;
+}
 .smPara {
   color: #515151;
   padding-left: 20px;

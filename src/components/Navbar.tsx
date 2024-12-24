@@ -6,7 +6,13 @@ import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
 import { IoIosLogOut } from "react-icons/io";
 import { SlCalender } from "react-icons/sl";
-
+import {
+  FaAngleDown,
+  FaAngleLeft,
+  FaAngleRight,
+  FaAngleUp,
+  FaRegCopy,
+} from "react-icons/fa";
 import { FiUser } from "react-icons/fi";
 const Navbar: React.FC = () => {
   const [showCreate, setShowCreate] = useState<boolean>(true);
@@ -15,6 +21,7 @@ const Navbar: React.FC = () => {
   const [userExits, setUserExists] = useState<boolean>(false);
   const [zumba, setZumba] = useState<boolean>(false);
   const [chika, setChika] = useState<boolean>(false);
+  const [showLogin, setShowLogin] = useState<boolean>(false);
   const navigate = useNavigate();
 
   const menuClick = () => {
@@ -188,6 +195,45 @@ const Navbar: React.FC = () => {
         >
           <p className="smPara"> CONTACT</p>
         </NavLink>
+        <div
+          onClick={() => {
+            setShowLogin((prev) => !prev);
+          }}
+          className="chimpu"
+        >
+          <p className="chinpu">LOGIN</p>
+          <button className="chibpu">
+            <FaAngleDown size={16} />
+          </button>
+        </div>
+        {showLogin && (
+          <>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "smSideNav active" : "smSideNav"
+              }
+              to="/login"
+            >
+              <p className="smPara"> USER LOGIN</p>
+            </NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "smSideNav active" : "smSideNav"
+              }
+              to="/admin-login"
+            >
+              <p className="smPara"> ADMIN LOGIN</p>
+            </NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "smSideNav active" : "smSideNav"
+              }
+              to="/doctor-login"
+            >
+              <p className="smPara"> DOCTOR LOGIN</p>
+            </NavLink>
+          </>
+        )}
       </div>
       {
         <>

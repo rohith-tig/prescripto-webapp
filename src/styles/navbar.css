@@ -212,7 +212,7 @@
   display: none;
 }
 
-@media (max-width: 1006px) {
+@media (max-width: 1085px) {
   .nav-center {
     display: none;
   }

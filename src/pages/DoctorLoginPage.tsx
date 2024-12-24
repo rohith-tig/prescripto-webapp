@@ -6,6 +6,8 @@ import Cookies from "js-cookie";
 import { api } from "../config/app";
 import axios from "axios";
 import Navbar from "../components/Navbar";
+import { toast, ToastContainer } from "react-toastify";
+import Credentials from "../components/Credentials";
 
 const DoctorLogin = () => {
   const [email, setEmail] = useState<string>("");
@@ -34,7 +36,7 @@ const DoctorLogin = () => {
     event.preventDefault();
 
     if (!email || !password) {
-      alert("Please provide both email and password!");
+      toast.warn("Please provide both email and password!");
       return;
     }
 
@@ -50,10 +52,9 @@ const DoctorLogin = () => {
           "Axios error message:",
           error.response?.data.message || error.message
         );
-        alert(error.response?.data.message);
+        toast.error(error.response?.data.message);
       } else {
-        console.error("Unexpected error:", error);
-        alert("Something went wrong. Please try again later.");
+        toast.error("Something went wrong. Please try again later.");
       }
     }
   };
@@ -100,6 +101,8 @@ const DoctorLogin = () => {
           </p>
         </div>
       </div>
+      <Credentials />
+      <ToastContainer />
     </>
   );
 };

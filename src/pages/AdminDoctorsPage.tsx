@@ -300,7 +300,7 @@ const DoctorAppointmentList: React.FC = () => {
     return (
       <div className="simbi">
         <div className="simbi1">
-          <h3>authorisesd</h3>
+          <h3>You are not authorised</h3>
           <div className="simbi2">
             <button
               onClick={() => {

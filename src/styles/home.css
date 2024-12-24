@@ -12,6 +12,88 @@
   padding-left: 10%;
   padding-right: 10%;
 }
+.credentials {
+  z-index: 10;
+  position: absolute;
+  bottom: 100px;
+  right: 100px;
+}
+.ochako {
+  background-color: black;
+  width: 60px;
+  height: 60px;
+
+  cursor: pointer;
+  border-width: 0px;
+  border-radius: 50px;
+
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+}
+.main-cred {
+  background-color: #1e293b;
+  height: 300px;
+  width: 300px;
+  position: absolute;
+  bottom: 170px;
+  right: 100px;
+  border-radius: 20px;
+  overflow: auto;
+}
+.main-cred::-webkit-scrollbar {
+  display: none;
+}
+.little {
+  background-color: #475569;
+  min-height: 50px;
+  height: 50px;
+  width: 290px;
+  cursor: pointer;
+  border-width: 0px;
+  margin-left: 5px;
+  margin-right: 5px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 20px;
+  font-family: Cambria;
+  color: white;
+}
+.littles {
+  background-color: #475569;
+  min-height: 50px;
+  height: auto;
+  width: 290px;
+  cursor: pointer;
+  border-width: 0px;
+  margin-left: 5px;
+  margin-right: 5px;
+  border-radius: 10px;
+  list-style-type: none;
+  margin-bottom: 20px;
+  font-family: Cambria;
+  color: white;
+  padding-bottom: 5px;
+}
+.bnm {
+  margin-left: 3px;
+  background-color: #475569;
+  color: #ffffff;
+  border-width: 0px;
+}
+
+.dfg {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.qwe {
+  display: flex;
+  flex-direction: row;
+  color: white;
+  align-items: center;
+  font-family: Cambria;
+}
 .appointment-container {
   background-color: #5f6fff;
   width: 100%;
@@ -120,6 +202,9 @@
   .grid:hover {
     transform: translateY(-10px);
     box-shadow: 0 4rem 8rem rgba(0, 0, 0, 0.2);
+  }
+  .bnm:hover {
+    color: #ffd700;
   }
 }
 

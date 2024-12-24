@@ -26,6 +26,7 @@ const Specialist: React.FC = () => {
   const [apiStatus, setapiStatus] = useState<string>(
     apiStatusConstants.initial
   );
+  const [transitionClass, setTransitionClass] = useState("");
 
   const apiCall = async () => {
     try {
@@ -70,6 +71,7 @@ const Specialist: React.FC = () => {
 
   useEffect(() => {
     apiCall();
+    setTransitionClass("bottom-right");
   }, [speciality]);
 
   const renderLoadingView = () => (
@@ -151,7 +153,7 @@ const Specialist: React.FC = () => {
   return (
     <>
       <Navbar />
-      <div className="doctor-width">
+      <div className={`doctor-width ${transitionClass}`}>
         <div className="responsive-doctor-cont">
           <p className="browse">Browse through the doctors specialist.</p>
           <div className="doctor-flex-div">

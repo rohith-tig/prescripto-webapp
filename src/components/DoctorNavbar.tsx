@@ -7,7 +7,7 @@ const DoctorNavbar = () => {
   const smNavRef = useRef<HTMLDivElement>(null);
   const [clicked, setClicked] = useState<boolean>(false);
   const navigate = useNavigate();
-
+  const [chika, setChika] = useState<boolean>(false);
   const menuClick = () => {
     setClicked((prev) => !prev);
   };
@@ -42,7 +42,12 @@ const DoctorNavbar = () => {
           alt="prescripto"
           src="https://res.cloudinary.com/duzolgclw/image/upload/v1729687963/admin_logo_ffyx3f.svg"
         />
-        <button onClick={logoutFunc} className="admin-logout">
+        <button
+          onClick={() => {
+            setChika(true);
+          }}
+          className="admin-logout"
+        >
           logout
         </button>
         <button onClick={menuClick} className="menu-icon">
@@ -80,6 +85,28 @@ const DoctorNavbar = () => {
           <p className="smPara">Profile</p>
         </NavLink>
       </div>
+      {chika && (
+        <>
+          <div className="simbi">
+            <div className="simbi1">
+              <h3>Are you sure you want to logout?</h3>
+              <div className="simbi2">
+                <button onClick={logoutFunc} className="yes-button">
+                  Yes
+                </button>
+                <button
+                  onClick={() => {
+                    setChika((prev) => !prev);
+                  }}
+                  className="close-button"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </>
+      )}
     </>
   );
 };

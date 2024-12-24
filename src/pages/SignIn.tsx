@@ -59,8 +59,9 @@ const SignUp = () => {
       <Navbar />
       <div className="login-cont">
         <div className="login-box">
-          <h2>Create Account</h2>
-          <p className="zumba">Please sign up to book an appointment</p>
+          <h2>
+            <span style={{ color: "#5f6fff" }}>Create </span>Account
+          </h2>
           <form onSubmit={registerFunc}>
             <div className="input-group">
               <label htmlFor="name">Full Name</label>

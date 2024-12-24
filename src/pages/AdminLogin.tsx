@@ -5,9 +5,10 @@ import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import { api } from "../config/app";
 import axios from "axios";
-import AdminNavbar from "../components/AdminNavbar";
+import { toast, ToastContainer } from "react-toastify";
 import Navbar from "../components/Navbar";
-
+import Credentials from "../components/Credentials";
+import "../styles/home.css";
 const AdminLogin = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
@@ -34,7 +35,7 @@ const AdminLogin = () => {
     event.preventDefault();
 
     if (!email || !password) {
-      alert("Please provide both email and password!");
+      toast.warn("Please provide both email and password!");
       return;
     }
 
@@ -50,10 +51,10 @@ const AdminLogin = () => {
           "Axios error message:",
           error.response?.data.message || error.message
         );
-        alert(error.response?.data.message);
+        toast.error(error.response?.data.message);
       } else {
         console.error("Unexpected error:", error);
-        alert("Something went wrong. Please try again later.");
+        toast.error("Something went wrong. Please try again later.");
       }
     }
   };
@@ -100,6 +101,8 @@ const AdminLogin = () => {
           </p>
         </div>
       </div>
+      <Credentials />
+      <ToastContainer />
     </>
   );
 };
